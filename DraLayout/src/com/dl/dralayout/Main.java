@@ -143,7 +143,6 @@ public class Main extends Activity {
 	
 	
 	// Recibe como parámetro la posición de la opción en el menu elegida.
-	@SuppressWarnings("unused")
 	@SuppressLint("ShowToast")
 	public void MostratFragmento(int posicion){
 		
@@ -153,6 +152,9 @@ public class Main extends Activity {
 			case 1: 
 				fragmento = new FragmentoHome();
 			break;
+			case 4: 
+				finish();
+				break;
 			default:
 				Toast.makeText(getApplicationContext(), "Algo salió mal!", Toast.LENGTH_SHORT).show();;
 				fragmento = new FragmentoHome();

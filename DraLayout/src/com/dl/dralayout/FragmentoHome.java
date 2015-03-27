@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,7 +36,7 @@ public class FragmentoHome extends Fragment {
 		super.onActivityCreated(savedInstanceState);
 		
 		// Agregamos información a la ListView
-		for(int i=0, count=20; i<count; i++){
+		for(int i=0, count=100; i<count; i++){
 			mDataSourceList.add("Nombre " + i);
 		}
 		
@@ -48,22 +48,30 @@ public class FragmentoHome extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				
-				Fragment detailFragment = new DetalleFLista();
+				//Fragment detailFragment = new DetalleFLista();
 				
+				
+				/* THIS IS WORKING ATM 
 				Bundle mbundle = new Bundle();
 				mbundle.putString("arg", mDataSourceList.get(position));
-				detailFragment.setArguments(mbundle);
+				//detailFragment.setArguments(mbundle);
+				Intent accion = new Intent(getActivity(), dflista.class);
+				accion.putExtras(mbundle);
+				startActivity(accion);
+				ShowToast("");
+				*/
 				
-				final FragmentManager FragmentManager = getActivity().getFragmentManager();
-				final FragmentTransaction fragmentTransaction = FragmentManager.beginTransaction();
 				
-				fragmentTransaction.replace(R.id.lista, detailFragment);
-				fragmentTransaction.commit();
+				
+				//final FragmentManager FragmentManager = getActivity().getFragmentManager();
+				//final FragmentTransaction fragmentTransaction = FragmentManager.beginTransaction();
+				
+				//fragmentTransaction.replace(R.id.lista, detailFragment);
+				//fragmentTransaction.commit();
 			}
 		});
 	}
     
-    @SuppressWarnings("unused")
 	private void ShowToast(String msg){
     	Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();;
     }
