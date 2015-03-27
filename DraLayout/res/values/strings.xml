@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ITSD Mobile</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- Lista de opciones del menu -->
+    <string-array name="nav_options">
+    	<item>Inicio</item>
+    	<item>Perfil</item>
+    	<item>Acerca de</item>
+    	<item>Salir</item>
+    </string-array>
+    
+    <!-- Lista de iconos de navegación -->
+    <array name="nav_icons">
+    	<item>@drawable/ic_action_home</item>
+    	<item>@drawable/ic_action_prof</item>
+    	<item>@drawable/ic_action_about</item>
+    	<item>@drawable/ic_action_exit</item>
+    </array>
+
+	<string name="image_content">APP BACKGROUND</string>
+	<string name="image_content2">APP IMG</string>
+	
+	<string name="dtexto">resultado</string>
+	
+</resources>
