@@ -1,11 +1,38 @@
 package com.dl.dralayout;
 
-import android.app.Activity;
-import android.content.Intent;
+import android.app.Fragment;
 import android.os.Bundle;
-import android.view.Menu;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
+
+public class dflista extends Fragment {
+
+	TextView texto;
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		return  inflater.inflate(R.layout.activity_detail_notf, container, false);
+	}
+
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		texto = (TextView) getView().findViewById(R.id.texto_detalle);
+		
+		Bundle mbundle = getArguments();
+		texto.setText(mbundle.getString("arg"));
+	}
+	
+	
+	
+	
+	
+}
+
+/*
 public class dflista extends Activity{
 
 	private TextView texto;
@@ -28,3 +55,4 @@ public class dflista extends Activity{
 
 	
 }
+*/

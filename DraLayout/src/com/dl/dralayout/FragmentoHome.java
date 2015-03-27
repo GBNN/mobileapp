@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
@@ -51,6 +52,17 @@ public class FragmentoHome extends Fragment {
 				//Fragment detailFragment = new DetalleFLista();
 				
 				
+				
+				
+				Fragment Dflista = new dflista();
+				Bundle mbundle = new Bundle();
+				mbundle.putString("arg", mDataSourceList.get(position));
+				Dflista.setArguments(mbundle);
+				
+				android.app.FragmentManager fm = getFragmentManager();
+				fm.beginTransaction().replace(R.id.content_frame, Dflista).commit();
+				
+				
 				/* THIS IS WORKING ATM 
 				Bundle mbundle = new Bundle();
 				mbundle.putString("arg", mDataSourceList.get(position));
@@ -72,6 +84,7 @@ public class FragmentoHome extends Fragment {
 		});
 	}
     
+	@SuppressWarnings("unused")
 	private void ShowToast(String msg){
     	Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();;
     }
