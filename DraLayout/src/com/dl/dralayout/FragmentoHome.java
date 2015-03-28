@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +13,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 /* Fragmento que mostrará las notificaciones al usuario */
 
@@ -51,10 +48,7 @@ public class FragmentoHome extends Fragment {
 				
 				//Fragment detailFragment = new DetalleFLista();
 				
-				
-				
-				
-				Fragment Dflista = new dflista();
+				Fragment Dflista = new DetalleLista();
 				Bundle mbundle = new Bundle();
 				mbundle.putString("arg", mDataSourceList.get(position));
 				Dflista.setArguments(mbundle);
@@ -84,9 +78,10 @@ public class FragmentoHome extends Fragment {
 		});
 	}
     
+    /*
 	@SuppressWarnings("unused")
 	private void ShowToast(String msg){
     	Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();;
-    }
+    }*/
 	
 }

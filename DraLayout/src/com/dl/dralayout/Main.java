@@ -28,9 +28,9 @@ public class Main extends Activity {
 	private DrawerLayout NavDrawerLayout;
 	private ListView NavList;
 	private String[] titulos;
-	private ArrayList<item_object> NavItems;
+	private ArrayList<MenuItems> NavItems;
 	private TypedArray NavIconos;
-	NavigationAdapter NavAdapter;
+	AdaptadorMenu NavAdapter;
 	
 	/**/
 	private ActionBarDrawerToggle mDrawerToggle;
@@ -59,16 +59,16 @@ public class Main extends Activity {
 		//Tomamos listado de titulos desde string-array de los recursos @string/nav_options
 		titulos = getResources().getStringArray(R.array.nav_options);
 		//Listado de titulos de barra de navegación
-		NavItems = new ArrayList<item_object>();
+		NavItems = new ArrayList<MenuItems>();
 		//Agregamos objetos items_object al ArrayList.
 		
-		NavItems.add(new item_object(titulos[0], NavIconos.getResourceId(0, -1))); // Inicio
-		NavItems.add(new item_object(titulos[1], NavIconos.getResourceId(1, -1))); // Perfil
-		NavItems.add(new item_object(titulos[2], NavIconos.getResourceId(2, -1))); // Acerca de
-		NavItems.add(new item_object(titulos[3], NavIconos.getResourceId(3, -1))); // Salir
+		NavItems.add(new MenuItems(titulos[0], NavIconos.getResourceId(0, -1))); // Inicio
+		NavItems.add(new MenuItems(titulos[1], NavIconos.getResourceId(1, -1))); // Perfil
+		NavItems.add(new MenuItems(titulos[2], NavIconos.getResourceId(2, -1))); // Acerca de
+		NavItems.add(new MenuItems(titulos[3], NavIconos.getResourceId(3, -1))); // Salir
 		
 		//Declaramos e inicializamos nuestro adaptador al cual le pasaremos el array con los titulos.
-		NavAdapter = new NavigationAdapter(this, NavItems);
+		NavAdapter = new AdaptadorMenu(this, NavItems);
 		NavList.setAdapter(NavAdapter);
 		
 		mTitle = mDrawerTitle = getTitle();

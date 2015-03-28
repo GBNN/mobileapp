@@ -12,12 +12,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 @SuppressLint("InflateParams")
-public class NavigationAdapter extends BaseAdapter {
+public class AdaptadorMenu extends BaseAdapter {
 	
 	private Activity activity;
-	ArrayList<item_object> arrayitems;
+	ArrayList<MenuItems> arrayitems;
 	
-	public NavigationAdapter(Activity activity, ArrayList<item_object> arrayitems){
+	public AdaptadorMenu(Activity activity, ArrayList<MenuItems> arrayitems){
 		super();
 		this.activity = activity;
 		this.arrayitems = arrayitems;
@@ -55,8 +55,8 @@ public class NavigationAdapter extends BaseAdapter {
 		if(convertView==null){
 		
 			view = new Fila();
-			// Creamos objeto object_item y lo obtenemos del arreglo.
-			item_object item = arrayitems.get(position);
+			// Creamos un objeto del tipo MenuItems y lo obtenemos del arreglo.
+			MenuItems item = arrayitems.get(position);
 			convertView = inflator.inflate(R.layout.itm, null);
 			
 			// Título
@@ -66,7 +66,7 @@ public class NavigationAdapter extends BaseAdapter {
 			// El ícono
 			view.icono = (ImageView) convertView.findViewById(R.id.icon);
 			// Se agrega el ícono
-			view.icono.setImageResource(item.getIcono());
+			view.icono.setImageResource(item.getImagen());
 			convertView.setTag(view);
 		}
 		return convertView;

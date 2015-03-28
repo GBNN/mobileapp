@@ -5,15 +5,15 @@
  *  */
 package com.dl.dralayout;
 
-public class item_object {
+public class MenuItems {
 
 	private String titulo;
-	private int icono;
+	private int imagen;
 	
 	
-	public item_object(String titulo, int icono){
+	public MenuItems(String titulo, int imagen){
 		this.titulo = titulo;
-		this.icono = icono;
+		this.imagen = imagen;
 	}
 	
 	public String getTitulo(){
@@ -24,11 +24,11 @@ public class item_object {
 		this.titulo = titulo;
 	}
 
-	public int getIcono(){
-		return icono;
+	public int getImagen(){
+		return imagen;
 	}
 
-	public void setIcono(int icono){
-		this.icono = icono;
+	public void setImagen(int imagen){
+		this.imagen = imagen;
 	}
 }
